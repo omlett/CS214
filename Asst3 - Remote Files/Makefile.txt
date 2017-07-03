@@ -1,0 +1,11 @@
+CC      =       gcc
+FLAGS	=	-pedantic -Wall -g -lpthread
+COMPILE =       ${CC} ${FLAGS}
+
+all:    libnetfiles	netfileserver
+libnetfiles:	libnetfiles.c
+		${COMPILE} -o libnetfiles libnetfiles.c
+netfileserver:	netfileserver.c
+		${COMPILE} -o netfileserver netfileserver.c
+clean:
+		rm -rf *.o libnetfiles netfileserver

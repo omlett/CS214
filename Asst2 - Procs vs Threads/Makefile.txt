@@ -1,0 +1,13 @@
+CC      =       gcc
+FLAGS	=	-w -pedantic -Wall -g
+COMPILE =       ${CC} ${FLAGS}
+
+all:    compressR_worker_LOLS	compressR_LOLS	compressT_LOLS
+compressR_LOLS:	compressR_LOLS.c
+		${COMPILE} -o compressR_LOLS compressR_LOLS.c
+compressR_worker_LOLS:	compressR_worker_LOLS.c
+		${COMPILE} -o compressR_worker_LOLS compressR_worker_LOLS.c
+compressT_LOLS:	compressT_LOLS.c
+		${COMPILE} -o compressT_LOLS compressT_LOLS.c
+clean:
+		rm -rf *.o compress compressR_worker_LOLS t2_txt_LOLS0 t2_txt_LOLS1

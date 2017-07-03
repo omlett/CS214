@@ -1,0 +1,5 @@
+Test Case E:\
+This test case attempts to test the function my free by incrementing a pointer until it is outside of the given array parameters and then tries to free it.  Essentially it attempts to both free memory that it did not allocate and memory not within the given bounds, normally returning a set fault.  The case should return that we are trying to access memory not within our bounds.\
+
+Test Case F:\
+This test case checks to see if the contiguous 5000 byte array can be arranged into a two-dimensional array. It then frees the allocated array.

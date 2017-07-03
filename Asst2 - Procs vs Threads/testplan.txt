@@ -1,0 +1,157 @@
+
+Test cases for RLE using multi-threading, multi-processing
+by Pranav Katkamwar (pranavk), Nikita Patel ()
+---------------------------------------------------------------------
+Test 1:
+Distinguish between uncompressed lengths of 2 and greater than 2.
+kkKKK
+
+compressR_LOLS
+Expected Output: kk3K
+Received Output: kk3K
+
+compressT_LOLS
+Expected Output: kk3K
+Received Output: kk3K
+---------------------------------------------------------------------
+Test 2a:
+Test for splitting into two files with even # total characters
+kktp
+
+compressR_LOLS
+Expected Output: File 1: kk, File 2: tp
+Received Output: File 1: kk, File 2: tp
+
+compressT_LOLS
+Expected Output: File 1: kk, File 2: tp
+Received Output: File 1: kk, File 2: tp
+---------------------------------------------------------------------
+Test 2b:
+Test for splitting into two files with odd # total characters
+kkk
+
+compressR_LOLS
+Expected Output: File 1: kk, File 2: k
+Received Output: File 1: kk, File 2: k
+
+compressT_LOLS
+Expected Output: File 1: kk, File 2: k
+Received Output: File 1: kk, File 2: k
+---------------------------------------------------------------------
+Test 3:
+Test for splitting into three files with 3x # total characters
+kkkjjj
+
+compressR_LOLS
+Expected Output: File 1: kk, File 2: kj, File 3: jj
+Received Output: File 1: kk, File 2: kj, File 3: jj
+
+compressT_LOLS
+Expected Output: File 1: kk, File 2: kj, File 3: jj
+Received Output: File 1: kk, File 2: kj, File 3: jj
+---------------------------------------------------------------------
+Test 4:
+Test for splitting into three files with 3x+2 # total characters
+kkkjjjjk
+
+compressR_LOLS
+Expected Output: File 1: kk, File 2: kj, File 3: jj
+Received Output: File 1: kk, File 2: kj, File 3: jj
+
+compressT_LOLS
+Expected Output: File 1: kk, File 2: kj, File 3: jj
+Received Output: File 1: kk, File 2: kj, File 3: jj 
+---------------------------------------------------------------------
+Test 5:
+Test with incompressible characters (numbers), only 1 output file
+kkkjjj2jk
+
+compressR_LOLS
+Expected Output: 3k4jk
+Received Output: 3k3jjk
+
+compressT_LOLS
+Expected Output: 3k4jk
+Received Output: 3k3jjk
+---------------------------------------------------------------------
+Test 6:
+Test empty file
+""
+
+compressR_LOLS
+Expected Output: ""
+Received Output: ""
+
+compressT_LOLS
+Expected Output: ""
+Received Output: ""
+---------------------------------------------------------------------
+Test 7:
+Test file with only numerical characters, 1 output file
+11115555
+
+compressR_LOLS
+Expected Output: ""
+Received Output: ""
+
+compressT_LOLS
+Expected Output: ""
+Received Output: ""
+---------------------------------------------------------------------
+Test 8:
+Test empty file with 2 splits
+
+compressR_LOLS
+Expected Output: File 1: "", File 2: ""
+Received Output: File 1: "", File 2: ""
+
+compressT_LOLS
+Expected Output: File 1: "", File 2: ""
+Received Output: File 1: "", File 2: ""
+---------------------------------------------------------------------
+Test 9:
+Test file with only numerical characters and 2 splits
+555666
+
+compressR_LOLS
+Expected Output: File 1: "", File 2: ""
+Received Output: File 1: "", File 2: ""
+
+compressT_LOLS
+Expected Output: File 1: "", File 2: ""
+Received Output: File 1: "", File 2: ""
+---------------------------------------------------------------------
+Test 10:
+Test with bad input file name
+
+compressR_LOLS
+Expected Output: Error
+Received Output: Error
+
+compressT_LOLS
+Expected Output: Error
+Received Output: Error
+---------------------------------------------------------------------
+Test 11:
+Test with inaccessible file (bad permission)
+
+compressR_LOLS
+Expected Output: Error
+Received Output: Error
+
+compressT_LOLS
+Expected Output: Error
+Received Output: Error
+---------------------------------------------------------------------
+Test 12:
+Test with only 1 character in file, 2 splits
+a
+
+compressR_LOLS
+Expected Output: File 1: a, File 2: ""
+Received Output: File 1: "", File 2: ""
+
+compressT_LOLS
+Expected Output: File 1: a, File 2: ""
+Received Output: File 1: "", File 2: ""
+---------------------------------------------------------------------

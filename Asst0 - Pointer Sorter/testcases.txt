@@ -1,0 +1,54 @@
+Tests.
+by pranavk
+
+> ./pointersorter badboyzvsbadgirls1badboys2badgirls
+badboys
+badboyzvsbadgirls
+badgirls
+
+
+> ./pointersorter jdiojed13j90ej13dij2f2*hd23h90d32
+d
+dij
+ej
+f
+h
+hd
+j
+jdiojed
+
+
+> ./pointersorter 
+
+Bad Input
+
+
+> ./pointersorter "Testing This Testes Tricycle"
+Testes
+Testing
+This
+Tricycle
+
+
+> ./pointersorter ""
+(No Output)
+
+
+> ./pointersorter "12039"
+(No Output)
+
+
+> ./pointersorter "thing stuff otherstuff blarp"
+blarp
+otherstuff
+stuff
+thing
+
+
+> ./pointersorter “thing1stuff3otherstuff,blarp”
+blarp
+otherstuff
+stuff
+thing
+
+
